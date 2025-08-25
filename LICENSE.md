@@ -1,6 +1,7 @@
 # MIT License
 
-## Copyright (c) 2016-2024 bol-van
+## Copyright (c) 2016-2025 bol-van [winws.exe, etc from github.com/bol-van/zapret-win-bundle]
+## Copyright (c) 2025 kotovskiy (github.com/wCATw) [*_kotovskiy.cmd, update_list_from_list-auto.py]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
