@@ -1,3 +1,5 @@
 list.txt
 list-auto.txt
 blockcheck.log
+*.log
+auto-log.txt
