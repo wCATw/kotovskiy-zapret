@@ -13,6 +13,7 @@ set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-65535 ^
 --filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=11
 net stop zapret_kotovskiy
 sc delete zapret_kotovskiy
+netsh interface tcp set global timestamps=enabled
 sc create zapret_kotovskiy binPath= "\"%~dp0winws.exe\" %ARGS%" DisplayName= "zapret: kotovskiy" start= auto
 sc start zapret_kotovskiy
 pause
