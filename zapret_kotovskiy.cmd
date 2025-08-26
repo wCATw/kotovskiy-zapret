@@ -9,10 +9,11 @@ setlocal
 
 :: Define arguments
 set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-65000 ^
---filter-tcp=80 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --methodeol --dpi-desync=fake,fakedsplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
---filter-tcp=443 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --methodeol --dpi-desync=fake,multidisorder --dpi-desync-repeats=11 --dpi-desync-split-pos=1,midsld --dpi-desync-fooling=badseq,md5sig --dpi-desync-fake-tls-mod=rnd,dupsid,sni=www.google.com --new ^
---filter-udp=443 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --dpi-desync=fake --dpi-desync-repeats=11 --dpi-desync-fake-quic="%~dp0files\quic_initial_www_google_com.bin" --new ^
---filter-udp=50000-65000 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --dpi-desync=fake --dpi-desync-fooling=badseq,md5sig
+--filter-tcp=80 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --methodeol --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --dpi-desync-repeats=6 --new ^
+--filter-tcp=443 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --methodeol --dpi-desync=fake,multidisorder --dpi-desync-split-pos=1,midsld --dpi-desync-fooling=badseq,md5sig --dpi-desync-fake-tls-mod=rnd,dupsid,sni=www.google.com --dpi-desync-repeats=6 --new ^
+--filter-udp=443 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic="%~dp0files\quic_initial_www_google_com.bin" --new ^
+--filter-udp=50000-65000 --hostlist-auto="%~dp0files\list-auto.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-debug="%~dp0files\auto.log" --hostlist-auto-fail-time=120 --dpi-desync=fake --dpi-desync-fooling=badseq,md5sig --dpi-desync-repeats=6 --dpi-desync-any-protocol=1 --dpi-desync-cutoff=n2
+
 
 
 netsh interface tcp set global timestamps=enabled
