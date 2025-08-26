@@ -5,4 +5,4 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`cygwin\bin\cygpath -C OEM -a -m zapret\blog.
 SET P='%%F'
 )
 
-"%~dp0..\elevator" blockcheck\cygwin\bin\bash -i "%P%"
+"%~dp0..\elevator" cygwin\bin\bash -i "%P%"
