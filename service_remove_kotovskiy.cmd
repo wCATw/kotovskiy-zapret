@@ -10,13 +10,6 @@ if "%1%" == "del" (
 	goto :end
 )
 
-sc qc windivert
-if errorlevel 1 goto :end
-
-echo.
-choice /C YN /M "Do you want to stop and delete kotovskiy's zapret?"
-if ERRORLEVEL 2 goto :eof
-
 "%~dp0elevator" %0 del
 goto :eof
 
